@@ -3,258 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mappillai Meeran S | Portfolio & Resume</title>
-    <meta name="description" content="Professional portfolio and interactive resume of Mappillai Meeran S - AI & ML Student & Data Engineer Intern.">
+    <title>Mappillai Meeran S | AI & ML Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Mappillai Meeran S - AI & Machine Learning Student & Data Engineer Intern at Sairam Institute of Technology.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Style Sheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode">
-    <!-- Header/Navigation -->
-    <header class="header">
-        <div class="logo">
-            <span class="logo-accent">&lt;</span>Meeran<span class="logo-accent">/&gt;</span>
-        </div>
-        <nav class="nav">
-            <a href="#about" class="nav-link active">About</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#education" class="nav-link">Education</a>
-        </nav>
-        <div class="header-actions">
-            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
-                <i class="fa-solid fa-sun"></i>
-            </button>
-            <button onclick="window.print()" class="btn btn-secondary btn-sm print-hide">
-                <i class="fa-solid fa-print"></i> Print Resume
-            </button>
+<body>
+
+    <!-- 3D INTERACTIVE CONNECTION CANVAS OVERLAY -->
+    <canvas id="connection-3d-canvas"></canvas>
+
+    <!-- TOP STICKY NAVIGATION BAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#home" class="brand-name">Meeran</a>
+                <span class="brand-subtitle">AI &amp; ML ENGINEER</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#education" class="nav-link">Education</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="search-btn" class="nav-icon-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <div class="nav-avatar">
+                    <img src="photo.jpg" alt="Mappillai Meeran S">
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Main Container -->
-    <main class="main-container">
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <div class="hero-badge">Available for Opportunities</div>
-                <h1 class="hero-title">Hi, I'm <span class="gradient-text">Mappillai Meeran S</span></h1>
-                <h2 class="hero-subtitle">AI & ML Student & Data Engineer</h2>
+    <!-- SEARCH MODAL OVERLAY -->
+    <div id="search-modal" class="search-modal hidden">
+        <div class="search-modal-content">
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Search skills, projects, experience...">
+                <button id="close-search" class="close-search-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="section-container hero-grid">
+            <div class="hero-text">
+                <div class="subtitle-badge">
+                    <span class="badge-line"></span>
+                    <span>AI &amp; ML STUDENT &bull; DATA ENGINEER INTERN</span>
+                </div>
+                <h1 class="hero-headline">
+                    Building Intelligent Systems with <em class="serif-italic">Code &amp; Data.</em>
+                </h1>
                 <p class="hero-description">
-                    Passionate about programming, intelligence, and developing intelligent automation systems. Skilled in Data Engineering, Python, OpenCV, and Generative AI.
+                    Passionate AI &amp; Machine Learning student at Sairam Institute of Technology. Experienced in data engineering, computer vision pipelines, and Generative AI solutions.
                 </p>
-                <div class="hero-buttons print-hide">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#experience" class="btn btn-secondary">View Work</a>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">Explore Projects <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="profile-card">
-                    <div class="profile-img-container">
-                        <img src="photo.jpg" alt="Mappillai Meeran S" class="profile-img">
-                    </div>
-                    <div class="profile-details">
-                        <h3>Mappillai Meeran S</h3>
-                        <p><i class="fa-solid fa-location-dot"></i> Chennai, Tamilnadu</p>
+            <div class="hero-visual-card">
+                <div class="portrait-wrapper interactive-node-target">
+                    <img src="photo.jpg" alt="Mappillai Meeran S" class="portrait-img">
+                    <div class="portrait-badge">
+                        <i class="fa-solid fa-location-dot"></i> Chennai, India
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Main Content Layout (Grid) -->
-        <div class="content-grid">
-            <!-- Left Column: Sticky Contact & General Info -->
-            <aside class="sidebar-column">
-                <!-- Contact Card -->
-                <div id="contact" class="card info-card">
-                    <h3 class="card-title"><i class="fa-solid fa-address-card icon-color"></i> Contact Info</h3>
-                    <ul class="contact-list">
-                        <li>
-                            <i class="fa-solid fa-envelope"></i>
-                            <div class="contact-detail">
-                                <span class="label">Email</span>
-                                <a href="mailto:mappillaimeeran317@gmail.com" class="value link">mappillaimeeran317@gmail.com</a>
-                            </div>
-                            <button class="copy-btn print-hide" data-copy="mappillaimeeran317@gmail.com" aria-label="Copy Email"><i class="fa-regular fa-copy"></i></button>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="contact-detail">
-                                <span class="label">Phone</span>
-                                <a href="tel:9629331706" class="value link">9629331706</a>
-                            </div>
-                            <button class="copy-btn print-hide" data-copy="9629331706" aria-label="Copy Phone"><i class="fa-regular fa-copy"></i></button>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-map-pin"></i>
-                            <div class="contact-detail">
-                                <span class="label">Address</span>
-                                <span class="value">Sai leo nagar, Chennai, Tamilnadu</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Languages Card -->
-                <div class="card info-card">
-                    <h3 class="card-title"><i class="fa-solid fa-language icon-color"></i> Languages</h3>
-                    <div class="languages-container">
-                        <div class="lang-tag">English</div>
-                        <div class="lang-tag">Tamil</div>
-                    </div>
-                </div>
-
-                <!-- Certifications Card -->
-                <div class="card info-card">
-                    <h3 class="card-title"><i class="fa-solid fa-award icon-color"></i> Certifications</h3>
-                    <ul class="cert-list">
-                        <li>
-                            <i class="fa-solid fa-certificate bullet-icon"></i>
-                            <span>NPTEL Certification</span>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-
-            <!-- Right Column: Timeline & Content -->
-            <div class="main-column">
-                <!-- About Me -->
-                <section id="about" class="section-card card">
-                    <h3 class="section-heading"><i class="fa-solid fa-user icon-color"></i> About Me</h3>
-                    <p class="about-text">
-                        I am an AI&ML student at Sairam Institute of Technology. I am deeply passionate about programming, technology, and problem solving. I have a strong interest in developing real-world solutions and learning new technologies to automate workflows, process big data, and integrate artificial intelligence to build modern software systems.
-                    </p>
-                </section>
-
-                <!-- Work Experience -->
-                <section id="experience" class="section-card card">
-                    <h3 class="section-heading"><i class="fa-solid fa-briefcase icon-color"></i> Work Experience</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-badge"></div>
-                            <div class="timeline-header">
-                                <h4 class="timeline-title">Data Engineer Intern</h4>
-                                <span class="timeline-date">June 2026 – July 2026</span>
-                            </div>
-                            <div class="timeline-company">Positive Integers Pvt Ltd <span class="badge-mode">Offline</span></div>
-                            <p class="timeline-description">
-                                Bridged academic concepts with industry-standard practices under the mentorship of senior engineers. Developed automated data ingestion pipelines and intelligent document parsing services.
-                            </p>
-                            <ul class="timeline-bullets">
-                                <li><strong>Bank Check Data Extraction System</strong>: Programmed a system utilizing OpenCV image preprocessing and Pytesseract OCR to automatically extract check dates, account numbers, and signatures. Compiled the parsed data into formatted Excel spreadsheets using OpenPyXL.</li>
-                                <li><strong>Bank Passbook Data Extraction System</strong>: Created a robust system that preprocesses scanned passbook tables, extracts tabular transactional data, and populates sheets dynamically, saving manual entry overhead.</li>
-                                <li>Learned and implemented Generative AI concepts (Large Language Models, tokenization, embeddings, zero-shot and few-shot prompt engineering). Developed internal web service backends using Python Flask.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Projects -->
-                <section id="projects" class="section-card card">
-                    <h3 class="section-heading"><i class="fa-solid fa-code icon-color"></i> Projects</h3>
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <div class="project-header">
-                                <i class="fa-solid fa-building-user project-icon"></i>
-                                <h4 class="project-title">Connected Apartment</h4>
-                            </div>
-                            <p class="project-desc">
-                                Smart Apartment Management System designed to handle resident communication, maintenance request tracking, visitor logging, and owner analytics portal.
-                            </p>
-                            <div class="project-tags">
-                                <span>HTML/CSS</span>
-                                <span>JavaScript</span>
-                                <span>Express.js</span>
-                                <span>Node.js</span>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-header">
-                                <i class="fa-solid fa-recycle project-icon"></i>
-                                <h4 class="project-title">Smart Waste Segregation</h4>
-                            </div>
-                            <p class="project-desc">
-                                Designed and developed an automated hardware/software system to separate degradable and non-degradable waste automatically using computer vision and sorting mechanisms.
-                            </p>
-                            <div class="project-tags">
-                                <span>Python</span>
-                                <span>IoT</span>
-                                <span>Computer Vision</span>
-                                <span>Automation</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Skills -->
-                <section id="skills" class="section-card card">
-                    <h3 class="section-heading"><i class="fa-solid fa-screwdriver-wrench icon-color"></i> Skills</h3>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h5>Languages & Core</h5>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Python (Basic)</span>
-                                <span class="skill-tag">Java (Basic)</span>
-                                <span class="skill-tag">Problem Solving</span>
-                                <span class="skill-tag">Willingness to learn</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h5>Web Technologies</h5>
-                            <div class="skill-tags">
-                                <span class="skill-tag">HTML5</span>
-                                <span class="skill-tag">CSS3</span>
-                                <span class="skill-tag">JavaScript (ES6+)</span>
-                                <span class="skill-tag">Flask / Express</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h5>Data & AI Technologies</h5>
-                            <div class="skill-tags">
-                                <span class="skill-tag">OpenCV</span>
-                                <span class="skill-tag">Pytesseract OCR</span>
-                                <span class="skill-tag">NumPy & Pandas</span>
-                                <span class="skill-tag">Generative AI & LLMs</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Education -->
-                <section id="education" class="section-card card">
-                    <h3 class="section-heading"><i class="fa-solid fa-graduation-cap icon-color"></i> Education</h3>
-                    <div class="education-list">
-                        <div class="edu-item">
-                            <div class="edu-header">
-                                <h4 class="edu-title">Bachelor of Engineering in CSE (AIML)</h4>
-                                <span class="edu-date">Ongoing</span>
-                            </div>
-                            <div class="edu-school">Sri Sairam Institute of Technology</div>
-                        </div>
-                        <div class="edu-item">
-                            <div class="edu-header">
-                                <h4 class="edu-title">Higher Secondary & Secondary School (10th & 12th)</h4>
-                                <span class="edu-date">Completed</span>
-                            </div>
-                            <div class="edu-school">Saraswathi Matriculation Higher Secondary School</div>
-                        </div>
-                    </div>
-                </section>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 Mappillai Meeran S. Built with care.</p>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-subtitle">
+                    <span class="badge-line"></span>
+                    <span>BACKGROUND &amp; INTENT</span>
+                </div>
+                <h2 class="section-title">Driven by curiosity and <em class="serif-italic">innovation.</em></h2>
+            </div>
+            <div class="about-card">
+                <p class="about-p">
+                    A dedicated and innovative AI &amp; ML student at Sairam Institute of Technology, Chennai, passionate about leveraging artificial intelligence to solve real-world problems and drive technological advancements. Eager to explore new frontiers in data science, deep learning, and intelligent automation.
+                </p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">AI &amp; ML</span>
+                        <span class="stat-lbl">Specialization</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">OCR &amp; LLMs</span>
+                        <span class="stat-lbl">Data Engineering</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">Sairam</span>
+                        <span class="stat-lbl">Institute of Technology</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="experience-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-subtitle">
+                    <span class="badge-line"></span>
+                    <span>CAREER PATH</span>
+                </div>
+                <h2 class="section-title">Industry experience &amp; <em class="serif-italic">contributions.</em></h2>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-card">
+                    <div class="timeline-top">
+                        <div>
+                            <span class="role-title">Data Engineer Intern</span>
+                            <span class="company-name">Positive Integers Pvt Ltd</span>
+                        </div>
+                        <span class="timeline-date">June 2026 – July 2026</span>
+                    </div>
+                    <p class="timeline-text">
+                        Gained hands-on experience in data engineering, processing, and automated pipeline optimization under senior mentorship.
+                    </p>
+                    <ul class="timeline-list">
+                        <li>
+                            <i class="fa-solid fa-check-double list-icon"></i>
+                            <strong>Bank Check Data Extraction System:</strong> Programmed an automated pipeline using OpenCV image preprocessing and Pytesseract OCR to extract check dates, account numbers, and signatures into formatted Excel spreadsheets.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-double list-icon"></i>
+                            <strong>Bank Passbook Data Extraction System:</strong> Created a robust system that preprocesses scanned passbook tables and extracts transaction records directly into dynamic sheets.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-double list-icon"></i>
+                            <strong>Generative AI &amp; Web Services:</strong> Implemented LLM tokenization, embeddings, and prompt engineering, developing internal backend services using Python Flask.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION (MATCHING USER SCREENSHOTS 4 & 5) -->
+    <section id="projects" class="projects-section-cream">
+        <div class="section-container">
+            <!-- Header Grid -->
+            <div class="projects-header-grid">
+                <div class="projects-header-left">
+                    <div class="section-subtitle-green">
+                        <span class="badge-line-green"></span>
+                        <span>SELECTED WORKS</span>
+                    </div>
+                    <h2 class="projects-main-title">
+                        Building intelligence <em class="serif-italic-green">into everyday life.</em>
+                    </h2>
+                </div>
+                <div class="projects-header-right">
+                    <p class="projects-lead-text">
+                        A collection of systems bridging the gap between digital logic and physical reality.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2-COL PROJECTS SHOWCASE -->
+            <div class="projects-cream-grid">
+                
+                <!-- Project 1 Card -->
+                <div class="project-cream-card interactive-node-target">
+                    <div class="project-img-container">
+                        <img src="apartment_preview.png" alt="Connected Apartment" class="project-preview-img">
+                        <div class="project-badge-pill">
+                            <span class="live-pulse-dot"></span> LIVE SYSTEM
+                        </div>
+                    </div>
+                    <div class="project-card-info">
+                        <h3 class="project-cream-title">Connected Apartment</h3>
+                        <p class="project-cream-desc">
+                            Smart Apartment Management System designed to centralize and automate residential living experiences.
+                        </p>
+                        <div class="tech-pills">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Express.js</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 Card -->
+                <div class="project-cream-card interactive-node-target">
+                    <div class="project-img-container">
+                        <img src="waste_segregation_preview.png" alt="Smart Waste Segregation" class="project-preview-img">
+                        <div class="project-badge-pill">
+                            <i class="fa-solid fa-microchip"></i> HARDWARE + SOFTWARE
+                        </div>
+                    </div>
+                    <div class="project-card-info">
+                        <h3 class="project-cream-title">Smart Waste Segregation</h3>
+                        <p class="project-cream-desc">
+                            Automated system utilizing computer vision to intelligently identify and segregate waste materials in real-time.
+                        </p>
+                        <div class="tech-pills">
+                            <span>Python</span>
+                            <span>IoT</span>
+                            <span>Computer Vision</span>
+                            <span>Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION (TECHNICAL ARSENAL - SCREENSHOTS 1, 2, 3) -->
+    <section id="skills" class="skills-section">
+        <div class="section-container">
+            
+            <div class="skills-header-grid">
+                <div class="skills-header-left">
+                    <div class="section-subtitle">
+                        <span class="badge-line"></span>
+                        <span>TECHNICAL ARSENAL</span>
+                    </div>
+                    <h2 class="skills-main-title">
+                        Tools of the <em class="serif-italic">trade.</em>
+                    </h2>
+                </div>
+                <div class="skills-header-right">
+                    <p class="skills-lead-text">
+                        A cultivated ecosystem of languages, frameworks, and intelligent systems used to build modern solutions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE SKILL BUBBLE ECOSYSTEM -->
+            <div class="interactive-bubbles-wrapper">
+                <canvas id="skills-bubble-canvas"></canvas>
+                <div class="bubble-legend">
+                    <i class="fa-solid fa-hand-pointer"></i> <span>HOVER TO INTERACT</span>
+                </div>
+            </div>
+
+            <!-- 3-COLUMN SKILLS CARDS GRID -->
+            <div class="skills-cards-grid">
+                
+                <div class="skills-card">
+                    <div class="card-icon-badge">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="card-title">Core Languages</h3>
+                    <ul class="card-skills-list">
+                        <li><span class="dot green-dot"></span> Python</li>
+                        <li><span class="dot green-dot"></span> Java</li>
+                        <li><span class="dot green-dot"></span> Problem Solving</li>
+                        <li><span class="dot gray-dot"></span> Continuous Learner</li>
+                    </ul>
+                </div>
+
+                <div class="skills-card">
+                    <div class="card-icon-badge">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="card-title">Data &amp; AI</h3>
+                    <ul class="card-skills-list">
+                        <li><span class="dot gold-dot"></span> Generative AI &amp; LLMs</li>
+                        <li><span class="dot gold-dot"></span> OpenCV</li>
+                        <li><span class="dot gold-dot"></span> Pytesseract OCR</li>
+                        <li><span class="dot gold-dot"></span> NumPy &amp; Pandas</li>
+                    </ul>
+                </div>
+
+                <div class="skills-card">
+                    <div class="card-icon-badge">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="card-title">Web Technologies</h3>
+                    <ul class="card-skills-list">
+                        <li><span class="dot gray-dot"></span> HTML5 &amp; CSS3</li>
+                        <li><span class="dot gray-dot"></span> JavaScript (ES6+)</li>
+                        <li><span class="dot gray-dot"></span> Flask</li>
+                        <li><span class="dot gray-dot"></span> Express</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section id="education" class="education-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-subtitle">
+                    <span class="badge-line"></span>
+                    <span>ACADEMIC FOUNDATION</span>
+                </div>
+                <h2 class="section-title">Education &amp; <em class="serif-italic">certifications.</em></h2>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <span class="edu-year">ONGOING</span>
+                    <h3 class="edu-title">B.E. Computer Science &amp; Engineering (AIML)</h3>
+                    <p class="edu-school">Sri Sairam Institute of Technology, Chennai</p>
+                </div>
+                <div class="edu-card">
+                    <span class="edu-year">COMPLETED</span>
+                    <h3 class="edu-title">Higher Secondary &amp; Secondary (10th &amp; 12th)</h3>
+                    <p class="edu-school">Saraswathi Matriculation Higher Secondary School</p>
+                </div>
+                <div class="edu-card full-span">
+                    <span class="edu-year">CERTIFICATION</span>
+                    <h3 class="edu-title">NPTEL Certified in Data Science &amp; AI</h3>
+                    <p class="edu-school">National Programme on Technology Enhanced Learning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="footer-section">
+        <div class="section-container footer-content">
+            <div class="footer-left">
+                <h2 class="footer-title">Let's build something <em class="serif-italic">extraordinary.</em></h2>
+                <p class="footer-desc">Open to data engineering, AI/ML opportunities, and collaborations.</p>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:mappillaimeeran317@gmail.com" class="footer-contact-link">
+                    <i class="fa-solid fa-envelope"></i> mappillaimeeran317@gmail.com
+                </a>
+                <a href="tel:9629331706" class="footer-contact-link">
+                    <i class="fa-solid fa-phone"></i> +91 9629331706
+                </a>
+                <div class="footer-socials">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mappillai Meeran S. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- JS Logic -->
+    <!-- Toast -->
+    <div id="toast" class="toast hidden">Copied to clipboard</div>
+
+    <!-- JS Scripts -->
     <script src="app.js"></script>
 </body>
 </html>
